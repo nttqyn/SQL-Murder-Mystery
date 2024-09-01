@@ -30,7 +30,7 @@ where person_id in ( select person_id from get_fit_now_check_in checkin join get
 					           on checkin.membership_id = member.id
 					           where checkin.check_in_date = 20180109 
 					           and member.membership_status ='gold'
-		                 and member.id like '48Z%');
+		                 		   and member.id like '48Z%');
 
 -- Transcript: I was hired by a woman with a lot of money. I don't know her name but I know she's around 5'5" (65") or 5'7" (67"). 
 --             She has red hair and she drives a Tesla Model S. I know that she attended the SQL Symphony Concert 3 times in December 2017.
@@ -42,8 +42,8 @@ where id in ( select person_id from facebook_event_checkin
 				      group by person_id 
 				      having count(person_id) = 3)
 and license_id = ( select id from drivers_license 
-					         where gender = 'female' and hair_color ='red' and car_make like 'Tesla%' and car_model = 'Model S'
-					         and height between 65 and 67);
+				      where gender = 'female' and hair_color ='red' and car_make like 'Tesla%' and car_model = 'Model S'
+				      and height between 65 and 67);
 
 -- Answer : Miranda Priestly with person id: 99716
 
